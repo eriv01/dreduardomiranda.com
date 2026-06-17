@@ -1142,7 +1142,7 @@ src="https://www.facebook.com/tr?id=3935426086752870&ev=PageView&noscript=1"
 <div id="copy-toast">✅ Código copiado!</div>
 
 <script>
-const VIDEO_DURATION = 122; // 2:02 em segundos
+const VIDEO_DURATION = 114; // 1:54 em segundos
 
 const video = document.getElementById('main-video');
 const playerWrap = document.getElementById('player-wrap');
@@ -1210,11 +1210,9 @@ video.addEventListener('timeupdate',()=>{
   progressFill.style.width=Math.min(pct,100)+'%';
   timeDisplay.textContent=fmtTime(video.currentTime)+' / 2:02';
 
-  // Show CTA after video ends (1:52)
+  // Show CTA at 1:54 sem pausar o vídeo
   if(video.currentTime>=VIDEO_DURATION && !ctaShown){
     ctaShown=true;
-    video.pause();
-    pauseVideo();
     ctaBtn.style.display='block';
     ctaBtn.scrollIntoView({behavior:'smooth',block:'nearest'});
   }
